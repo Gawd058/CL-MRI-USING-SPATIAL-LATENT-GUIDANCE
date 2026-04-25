@@ -1,7 +1,6 @@
 # CL-MRI: Self-Supervised Contrastive Learning for Undersampled MRI Reconstruction
 ## A Complete Technical Walkthrough — Every Concept, Every Number, Every Step
 
-**Authors:** [Your names here]
 **Dataset:** fastMRI Brain FLAIR Multicoil — 186 HDF5 files
 **Hardware:** NVIDIA RTX 4060 Laptop GPU, 8GB VRAM
 **Framework:** PyTorch
