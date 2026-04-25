@@ -352,7 +352,9 @@ This pads the upsampled feature map to exactly match the skip connection's dimen
 
 The L1 loss (Mean Absolute Error) between the predicted magnitude image and the ground truth magnitude image:
 
-$$ \mathcal{L}_{recon} = \frac{1}{N} \sum_{i} |\text{pred\_magnitude}(i) - \text{gt}(i)| $$
+$$
+\mathcal{L}_{\mathrm{recon}} = \frac{1}{N} \sum_i \left| \mathrm{pred\_magnitude}(i) - \mathrm{gt}(i) \right|
+$$
 
 Where:
 $$ \text{pred\_magnitude} = \sqrt{\text{pred\_real}^2 + \text{pred\_imag}^2 + 10^{-8}} $$
@@ -450,8 +452,12 @@ Total U-Net parameters ≈ 31 million. The 4,032 additional parameters represent
 
 ### 8.1 L1 Reconstruction Loss
 
-$$ \mathcal{L}_{recon} = \frac{1}{H \cdot W} \sum_{x,y} \left| \sqrt{\text{pred\_real}(x,y)^2 + \text{pred\_imag}(x,y)^2 + 10^{-8}} - \text{gt}(x,y) \right| $$
-
+$$
+\mathcal{L}_{recon} = \frac{1}{H \cdot W} \sum_{x,y} \left| 
+\sqrt{\text{pred\_real}(x,y)^2 + \text{pred\_imag}(x,y)^2 + 10^{-8}} 
+- \text{gt}(x,y) 
+\right|
+$$
 For a 768×392 image: 300,816 pixel-wise absolute differences, summed and divided by 300,816.
 
 Typical values at various training stages:
